@@ -11,10 +11,12 @@ C++ implementation for Compilers Principles, Techniques, &amp; Tools 2nd (i.e. ç
 	`./run_me`
 
 ### On Mac
-- replace `g++` above with `clang++` or any other compiler you like. 
+- same as that on Linux.
 
 ### On Windows
-- No idea, figure out yourself~
+- use VS(2012+) Command Prompt:
+ - `cl /EHsc some_exercise.cpp`
+ - `some_exercise.exe`
 
 
 
