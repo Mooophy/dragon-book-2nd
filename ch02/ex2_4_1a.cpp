@@ -44,9 +44,9 @@ inline bool parse_241a(Iter first, Iter last)
     };
 
     //! call the lambda
-    Iter curr = first;
-    do  curr = s(curr);
-    while(curr++ != last);
+    Iter lookahead  =   first;
+    do  lookahead   =   s(lookahead);
+    while(lookahead++ != last);
 
     return is_legal;
 }
@@ -55,7 +55,7 @@ inline bool parse_241a(Iter first, Iter last)
 
 int main()
 {
-    std::cout << "enter statements, pls follow : S -> '+' S S | '-' S S | 'a'\n";
+    std::cout << "pls enter, following : S -> '+' S S | '-' S S | 'a'\n";
 
     for(std::string buff; std::cin >> buff; /* */)
     {
