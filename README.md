@@ -12,3 +12,6 @@ C++ implementation for Compilers Principles, Techniques, &amp; Tools 2nd (i.e. ç
 
 ### On Windows
 - figure out yourself~
+
+### On Mac
+- no idea~
