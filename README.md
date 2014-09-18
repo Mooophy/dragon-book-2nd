@@ -10,8 +10,11 @@ C++ implementation for Compilers Principles, Techniques, &amp; Tools 2nd (i.e. ç
 - to run :
 	`./run_me`
 
+### On Mac
+- replace `g++` above with `clang++` or any compiler similar. 
+
 ### On Windows
 - figure out yourself~
 
-### On Mac
-- same as that on Linux.
+
+
