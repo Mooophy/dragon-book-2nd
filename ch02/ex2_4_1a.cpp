@@ -17,6 +17,8 @@ namespace dragon{ namespace ch2{
  * @param first
  * @param last
  * @return  true if legal, false otherwise.
+ *
+ * @complexity  O(n)
  */
 template<typename Iter>
 inline bool parse_241a(Iter first, Iter last)
