@@ -28,6 +28,12 @@ inline bool parse_241a(Iter first, Iter last)
     //! define lambda s for real work
     std::function<Iter(Iter)> s = [&](Iter curr) -> Iter
     {
+        if(curr == last)    //range checking.
+        {
+            is_legal = false;
+            return last;
+        }
+
         if(*curr == 'a')
             return curr + 1;
         else if(*curr == '+'   ||  *curr == '-')

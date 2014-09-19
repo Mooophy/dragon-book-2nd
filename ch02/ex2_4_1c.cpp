@@ -26,11 +26,21 @@ namespace dragon {namespace ch2 {
 template<typename Iter>
 bool parse_241c(Iter first, Iter last)
 {
+    //! ensure "01" can be dereferenced safely
+    if(last - first < 2)
+        return false;
+
     bool is_legal = true;
 
     //! define lambda s for real work
     std::function<Iter(Iter)> s = [&](Iter curr) -> Iter
     {
+        if(curr >= last)
+        {
+            is_legal = false;
+            return curr;
+        }
+
         if(*curr == '0'  && *(curr + 1) =='1')
             return curr + 2;
         else if(*curr == '0')
