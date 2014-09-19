@@ -23,7 +23,7 @@ inline bool parse_241a(Iter first, Iter last)
 {
     bool is_legal = true;
 
-    //! define a lambda for real work
+    //! define lambda s for real work
     std::function<Iter(Iter)> s = [&](Iter curr)
     {
         if(curr == last)
@@ -43,15 +43,13 @@ inline bool parse_241a(Iter first, Iter last)
         }
     };
 
-    //! call the lambda
-    Iter lookahead  =   first;
-    do  lookahead   =   s(lookahead);
-    while(lookahead++ != last);
-
-    return is_legal;
+    //! @brief  call lambda s and return result
+    //!
+    //! @note   since lamda s cover all the possibilites, the iterator
+    //!         returned by a legal input must point to last.
+    return is_legal     &&      s(first) == last;
 }
 }}//namespace
-
 
 int main()
 {
