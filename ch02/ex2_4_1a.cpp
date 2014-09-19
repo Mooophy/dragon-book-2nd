@@ -41,7 +41,7 @@ inline bool parse_241a(Iter first, Iter last)
 
     //! @note   since lambda s cover all the possibilites, the iterator
     //!         returned for a legal input must point to last.
-    return is_legal  &&  s(first) == last;
+    return s(first) == last     &&  is_legal;
 }
 }}//namespace
 
