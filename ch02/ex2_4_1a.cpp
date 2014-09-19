@@ -24,14 +24,8 @@ inline bool parse_241a(Iter first, Iter last)
     bool is_legal = true;
 
     //! define lambda s for real work
-    std::function<Iter(Iter)> s = [&](Iter curr)
+    std::function<Iter(Iter)> s = [&](Iter curr) -> Iter
     {
-        if(curr == last)
-        {
-            is_legal = false;
-            return last;
-        }
-
         if(*curr == 'a')
             return curr + 1;
         else if(*curr == '+'   ||  *curr == '-')
@@ -43,11 +37,9 @@ inline bool parse_241a(Iter first, Iter last)
         }
     };
 
-    //! @note   since lamda s cover all the possibilites, the iterator
-    //!         returned by a legal input must point to last.
-    bool is_last =  s(first) == last;
-
-    return is_legal  &&  is_last;
+    //! @note   since lambda s cover all the possibilites, the iterator
+    //!         returned for a legal input must point to last.
+    return is_legal  &&  s(first) == last;
 }
 }}//namespace
 
