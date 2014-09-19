@@ -5,4 +5,4 @@ CONFIG -= qt
 CONFIG += c++11
 
 SOURCES += \
-    ex2_4_1a.cpp
+    ex2_4_1c.cpp
