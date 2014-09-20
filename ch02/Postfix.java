@@ -50,7 +50,7 @@ class Parser
         if(lookahead == t)
             lookahead = System.in.read();
         else 
-        	throw new Error("syntax error");
+            throw new Error("syntax error");
     }
 }
 
@@ -59,8 +59,8 @@ public class Postfix
 {
 	public static void main(String[] args) throws IOException
 	{
-        Parser parse = new Parser();
-        parse.expr();
-        System.out.write('\n');
+            Parser parse = new Parser();
+            parse.expr();
+            System.out.write('\n');
 	}
 }
