@@ -26,10 +26,6 @@ namespace dragon {namespace ch2 {
 template<typename Iter>
 bool parse_241c(Iter first, Iter last)
 {
-    //! ensure "01" can be dereferenced safely
-  //    if(last - first < 2)
-  //      return false;
-
     bool is_legal = true;
 
     //! define lambda s for real work
