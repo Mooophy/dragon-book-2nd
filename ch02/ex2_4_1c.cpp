@@ -27,15 +27,15 @@ template<typename Iter>
 bool parse_241c(Iter first, Iter last)
 {
     //! ensure "01" can be dereferenced safely
-    if(last - first < 2)
-        return false;
+  //    if(last - first < 2)
+  //      return false;
 
     bool is_legal = true;
 
     //! define lambda s for real work
     std::function<Iter(Iter)> s = [&](Iter curr) -> Iter
     {
-        if(curr >= last)
+        if(last - curr < 2)
         {
             is_legal = false;
             return curr;
@@ -56,9 +56,8 @@ bool parse_241c(Iter first, Iter last)
         }
     };
 
-    //! call lambda and return
-    s(first);
-    return is_legal;
+    //! call lambda s
+    return s(first) == last     &&  is_legal;
 }
 }}//namespace
 
