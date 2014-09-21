@@ -2,8 +2,9 @@
 
 int main()
 {
-    dragon::ch2::Postfix parse{};
+    using Iter  =    std::istream_iterator<char>;
 
+    dragon::ch2::Postfix<Iter> parse{{std::cin}};
     parse();
 
     return 0;
