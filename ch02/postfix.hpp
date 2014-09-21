@@ -15,10 +15,10 @@ public:
         curr{std::cin}
     {}
 
-    void expr()
+    void operator()()
     {
         term();
-        for(++curr; *curr == '+'  ||  *curr == '-'; ++curr)
+        for(++curr; *curr == '+' || *curr == '-' ;  ++curr)
         {
             auto optr = *curr++;
             term();
@@ -33,14 +33,6 @@ private:
     {
         if(std::isdigit(*curr))
             std::cout << *curr;
-        else
-            throw std::runtime_error{"syntax error"};
-    }
-
-    void match(char t)
-    {
-        if(*curr == t)
-            ++curr;
         else
             throw std::runtime_error{"syntax error"};
     }

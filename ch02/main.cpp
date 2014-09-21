@@ -4,7 +4,7 @@ int main()
 {
     dragon::ch2::Postfix parse{};
 
-    parse.expr();
+    parse();
 
     return 0;
 }
