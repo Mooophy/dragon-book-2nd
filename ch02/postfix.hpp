@@ -59,7 +59,4 @@ private:
     }
 };
 }}//namespace
-
-
-
 #endif // POSTFIX_HPP
