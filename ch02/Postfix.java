@@ -7,7 +7,7 @@ class Parser
 {
     static int lookahead;
 
-    public Parser()throws IOException
+    public Parser() throws IOException
     {
         lookahead = System.in.read();
     }
@@ -39,7 +39,7 @@ class Parser
         if(Character.isDigit((char)lookahead))
         {
             System.out.write((char)lookahead);
-            match(lookahead);
+            match(lookahead);   //next
         }
         else
             throw new Error("syntax error");
