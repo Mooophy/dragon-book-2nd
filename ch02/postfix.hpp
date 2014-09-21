@@ -12,45 +12,27 @@ class Postfix
 public:
     using Iter = std::istream_iterator<char>;
     Postfix():
-        curr{std::cin},eos{}
+        curr{std::cin}
     {}
 
     void expr()
     {
         term();
-        ++curr;
-        while(true)
+        for(++curr; *curr == '+'  ||  *curr == '-'; ++curr)
         {
-            if( *curr == '+')
-            {
-                match('+');
-                term();
-                std::cout << '+';
-                ++curr;
-            }
-            else if(*curr == '-')
-            {
-                match('-');
-                term();
-                std::cout << '-';
-                ++curr;
-            }
-            else
-                return;
+            auto optr = *curr++;
+            term();
+            std::cout << optr;
         }
     }
 
 private:
     Iter curr;
-    Iter eos;
 
     void term()
     {
         if(std::isdigit(*curr))
-        {
             std::cout << *curr;
-//            match(*curr);
-        }
         else
             throw std::runtime_error{"syntax error"};
     }
