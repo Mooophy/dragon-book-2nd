@@ -7,47 +7,60 @@
 
 namespace dragon {namespace ch2 {
 
-template<typename Iter>
 class Postfix
 {
 public:
-    using ValueType =   typename std::iterator_traits<Iter>::value_type;
-
-    Postfix(Iter first, Iter last):
-        curr{first}, end{last}
+    using Iter = std::istream_iterator<char>;
+    Postfix():
+        curr{std::cin},eos{}
     {}
 
-    void operator()()
+    void expr()
     {
         term();
-        while(curr != end   &&  (*curr == '+'   ||  *curr == '-'))
+        ++curr;
+        while(true)
         {
-            auto optr = *curr;
-            ++curr;
-            term();
-            std::cout << optr;
+            if( *curr == '+')
+            {
+                match('+');
+                term();
+                std::cout << '+';
+                ++curr;
+            }
+            else if(*curr == '-')
+            {
+                match('-');
+                term();
+                std::cout << '-';
+                ++curr;
+            }
+            else
+                return;
         }
     }
 
 private:
     Iter curr;
-    Iter end;
+    Iter eos;
 
     void term()
     {
         if(std::isdigit(*curr))
         {
             std::cout << *curr;
-            ++curr;
+//            match(*curr);
         }
         else
-            throw std::runtime_error{"syntax error : digit expected\n"};
+            throw std::runtime_error{"syntax error"};
     }
 
-    void match(ValueType t)
+    void match(char t)
     {
-        if(t == *curr)  ++curr;
-        else            throw std::runtime_error{"syntax error : can't match\n"};
+        if(*curr == t)
+            ++curr;
+        else
+            throw std::runtime_error{"syntax error"};
     }
 };
 }}//namespace

@@ -2,13 +2,9 @@
 
 int main()
 {
-    using Iter  =   std::istream_iterator<char>;
-    auto first  =   Iter{std::cin};
-    auto last   =   Iter{};
+    dragon::ch2::Postfix parse{};
 
-    dragon::ch2::Postfix<Iter> parse{first, last};
-
-    parse();
+    parse.expr();
 
     return 0;
 }
