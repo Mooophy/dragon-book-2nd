@@ -5,7 +5,7 @@ public class Word extends Token
     
     public Word(int t, String s)
     {
-        supter(t);
+        super(t);
         lexeme = new String(s);
     }
 }
