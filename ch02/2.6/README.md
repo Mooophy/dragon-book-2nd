@@ -1,1 +1,2 @@
-- all java files as in section 2.6
+- java_src
+ - all java files as in section 2.6
