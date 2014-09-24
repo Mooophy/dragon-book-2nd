@@ -63,14 +63,6 @@ public class Lexer
         peek = ' ';
         return t;
     }
-
-    public static void main(String args[]) throws IOException
-    {
-        Lexer lex = new Lexer();
-        Token t = lex.scan();
-        System.out.write(t.tag);
-        
-    }
 }
 
 
