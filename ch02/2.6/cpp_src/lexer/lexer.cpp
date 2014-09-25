@@ -35,14 +35,14 @@ TokenSptr Lexer::scan()
 
         auto w = words.find(key);
         if(w != words.end())    return w->second;
-        else
-        {
-            auto ret = std::make_shared<Word>(Tag::ID, key);
-            words.insert({key, ret});
-            return ret;
-        }
-
+        auto ret = std::make_shared<Word>(Tag::ID, key);
+        words.insert({key, ret});
+        return ret;
     }
+    TokenSptr token = std::make_shared<Token>(Token{peek});
+    peek = ' ';
+
+    return  token;
 }
 
 }}//namespace

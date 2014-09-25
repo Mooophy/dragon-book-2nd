@@ -5,15 +5,17 @@
 #include <memory>
 
 namespace dragon {namespace ch2 {
-
-enum class Tag
+namespace Tag
 {
-    NUM = 256, ID = 257, TRUE = 258, FALSE = 259
-};
+    static const int NUM    =   256;
+    static const int ID     =   257;
+    static const int TRUE   =   258;
+    static const int FALSE  =   259;
+}
 
 struct Token
 {
-   const Tag tag;
+   const int tag;
 };
 
 struct Num : public Token
@@ -27,7 +29,7 @@ struct Num : public Token
 
 struct Word : public Token
 {
-    Word(Tag t, const std::string& lx):
+    Word(int t, const std::string& lx):
         Token{t},lexeme{lx}
     {}
 

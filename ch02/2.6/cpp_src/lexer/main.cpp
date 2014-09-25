@@ -8,6 +8,8 @@ int main()
 
     Lexer lex{};
 
+    std::cout << lex.scan()->tag;
+
     return 0;
 }
 
