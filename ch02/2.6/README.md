@@ -1,7 +1,11 @@
-###MEMO
+###CONTENTS
 - lexer.h
  - class Lexer
 - token.h
  - token classes hierarchy
 - java/
- - java sampleas on the textbook
+ - java sample codes as on the textbook
+### NOTE
+- Design modifications
+ - use iterator for `peek` rather than `char`
+  
