@@ -1,13 +1,12 @@
 #include <iostream>
 #include "token.h"
+#include "lexer.h"
 
 int main()
 {
     using namespace dragon::ch2;
 
-    Token t{Tag::NUM};
-    Num n{2};
-    Word w{Tag::ID, "if"};
+    Lexer lex{};
 
     return 0;
 }

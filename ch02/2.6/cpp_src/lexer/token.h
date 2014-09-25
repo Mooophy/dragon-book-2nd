@@ -2,6 +2,7 @@
 #define TOKEN_H
 
 #include <string>
+#include <memory>
 
 namespace dragon {namespace ch2 {
 
@@ -32,6 +33,8 @@ struct Word : public Token
 
     const std::string lexeme;
 };
+
+using TokenSptr = std::shared_ptr<Token>;
 
 }}//namespace
 #endif // TOKEN_H

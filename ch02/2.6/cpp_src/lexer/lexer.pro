@@ -4,8 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 CONFIG += C++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    lexer.cpp
 
 HEADERS += \
-    token.h
+    token.h \
+    lexer.h
 
