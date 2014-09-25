@@ -1,5 +1,6 @@
-- java_src
- - All files for the Lexer written in java as on dragon book.
-- cpp_src
- - My c++ implementation for the same thing.
- - Exercises this secion are going to be stored in it as well.
+- lexer.h
+ - class Lexer
+- token.h
+ - token classes hierarchy
+- java/
+ - java implementation as on the textbook
