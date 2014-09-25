@@ -1,5 +1,5 @@
 - java_src
- - all java files as in section 2.6
+ - All files for the Lexer written in java as on dragon book.
 - cpp_src
- - c++ implementation for the same thing.
- - all exercises are going be stored in it as well.
+ - My c++ implementation for the same thing.
+ - Exercises this secion are going to be stored in it as well.
