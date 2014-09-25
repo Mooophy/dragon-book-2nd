@@ -1,3 +1,4 @@
+###MEMO
 - lexer.h
  - class Lexer
 - token.h
