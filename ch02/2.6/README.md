@@ -4,4 +4,4 @@
 - token.h
  - token classes hierarchy
 - java/
- - java implementation as on the textbook
+ - java sampleas on the textbook
