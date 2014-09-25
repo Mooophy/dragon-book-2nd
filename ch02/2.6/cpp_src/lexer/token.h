@@ -1,6 +1,8 @@
 #ifndef TOKEN_H
 #define TOKEN_H
 
+#include <string>
+
 namespace dragon {namespace ch2 {
 
 enum class Tag
@@ -19,7 +21,16 @@ struct Num : public Token
         Token{Tag::NUM}, value{val}
     {}
 
-    int value;
+    const int value;
+};
+
+struct Word : public Token
+{
+    Word(Tag t, const std::string& lx):
+        Token{t},lexeme{lx}
+    {}
+
+    const std::string lexeme;
 };
 
 }}//namespace
