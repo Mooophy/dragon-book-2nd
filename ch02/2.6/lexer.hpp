@@ -79,7 +79,7 @@ public:
         }
 
         return std::make_shared<Token>
-                (not_end()?   Token{*peek}    :   Token{Tag::END});
+                (not_end()?   Token{*peek++}    :   Token{Tag::END});
     }
 
 private:
