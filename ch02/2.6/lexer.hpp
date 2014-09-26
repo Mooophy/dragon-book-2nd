@@ -2,6 +2,7 @@
 //!
 //! @author Yue Wang
 //! @date   26 Sep 2014
+//! @note   exercises 2.6.1~3 have been nested in the code below.
 //!
 #ifndef LEXER_HPP
 #define LEXER_HPP
