@@ -64,13 +64,23 @@ public:
         }
 
         //! for comments "\\"
-        if(end - peek > 2   &&  *peek == 92   &&  *(peek + 1) == 92)
-            for( peek += 2 ; not_end() &&  *peek != '\n'; ++peek );
+        //! ex2.6.1 a)
+        if(end - peek > 2   &&  *peek == '\\'   &&  *(peek + 1) == '\\')
+            for( peek += 2; not_end() &&  *peek != '\n'; ++peek );
         if(not_end()    &&  *peek == '\n')
         {
             ++curr_line;
             ++peek;
         }
+
+        //! for comments "\**\"
+        //! ex2.6.1 b)
+        if(end - peek > 2   &&  *peek == '\\'   &&  *(peek + 1) == '*')
+            for(peek += 2;
+                not_end()  &&  !((end - peek > 2) && *peek == '*' && *(peek + 1) == '\\');
+                ++peek)
+                if(*peek    ==  '\n')
+                    ++curr_line;
 
         //! for num
         if(not_end()    &&  std::isdigit(*peek))

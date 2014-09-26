@@ -7,7 +7,7 @@ int main()
     using namespace dragon::ch2;
     using Iter = std::string::iterator;
 
-    std::string input{"\\\\**9898\n"};
+    std::string input{"\\\\*"};
     Lexer<Iter> lex{input.begin(), input.end()};
 
     while(lex.not_end())
