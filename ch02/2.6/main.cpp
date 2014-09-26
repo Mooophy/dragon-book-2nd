@@ -1,14 +1,16 @@
 #include <iostream>
-#include "token.h"
-#include "lexer.h"
+#include <iterator>
+#include "lexer.hpp"
 
 int main()
 {
     using namespace dragon::ch2;
+    using Iter = std::string::iterator;
 
-    Lexer lex{};
-    std::cout << lex.scan()->tag;
+    std::string input{" s \t*\t 2"};
+    Lexer<Iter> lex{input.begin(), input.end()};
 
+    std::cout << lex.scan()->tag << std::endl;
     return 0;
 }
 

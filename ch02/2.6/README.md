@@ -1,10 +1,12 @@
-#MEMO
-- lexer.h
+###MEMO
+- lexer.hpp
  - class Lexer
-- token.h
+- token.hpp
  - token classes hierarchy
+- main.cpp
+ - for testing
 - java/
- - java sample codes as on the textbook
-- Design modifications
+ - storing sample codes in java as on the textbook
+### Design modifications
  - use iterator for `peek` rather than `char`
   

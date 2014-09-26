@@ -1,5 +1,5 @@
-#ifndef TOKEN_H
-#define TOKEN_H
+#ifndef TOKEN_HPP
+#define TOKEN_HPP
 
 #include <string>
 #include <memory>
@@ -11,6 +11,7 @@ namespace Tag
     static const int ID     =   257;
     static const int TRUE   =   258;
     static const int FALSE  =   259;
+    static const int END    =   999;    //as end of input
 }
 
 struct Token
@@ -39,4 +40,4 @@ struct Word : public Token
 using TokenSptr = std::shared_ptr<Token>;
 
 }}//namespace
-#endif // TOKEN_H
+#endif // TOKEN_HPP
