@@ -14,4 +14,5 @@
 ###MEMO 
 - Design modifications
  - use iterator for `peek` rather than `char`
+ - add `Tag::END` to end input. 
   
