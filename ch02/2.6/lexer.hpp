@@ -84,41 +84,38 @@ public:
 
         //! for operators : < <= == != => >
         //! ex2.6.2
-        if(not_end()    &&  *peek == '>')                   //  >
-        {
-            ++peek;
-            return std::make_shared<Op>(Tag::GRE);
-        }
         if(not_end()    &&  *peek == '<')
         {
-            if(end - peek > 1   &&  *(peek + 1) == '=')     //  <=
+            if(end - peek > 1   &&  *(peek + 1) == '=')                     //  <=
             {
                 peek += 2;
                 return std::make_shared<Op>(Tag::LESSEQ);
             }
-            else                                            //  <
+            else                                                            //  <
             {
                 ++peek;
                 return std::make_shared<Op>(Tag::LESS);
             }
         }
-        if(end - peek > 1   &&  *peek == '=')
-        {
-            if(*(peek + 1)  ==  '=')                        //  ==
-            {
-                peek += 2;
-                return std::make_shared<Op>(Tag::EQ);
-            }
-            else if(*(peek + 1)  ==  '>')
-            {
-                peek += 2;
-                return std::make_shared<Op>(Tag::GREEQ);    //  >=
-            }
-        }
-        if(end - peek > 1   &&  *peek == '!'    &&  *(peek + 1) == '=')
+        if(end - peek > 1   &&  *peek == '='    &&  *(peek + 1) == '=')     //  ==
         {
             peek += 2;
-            return std::make_shared<Op>(Tag::NOTEQ);        //  !=
+            return std::make_shared<Op>(Tag::EQ);
+        }
+        if(end - peek > 1   &&  *peek == '!'    &&  *(peek + 1) == '=')     //  !=
+        {
+            peek += 2;
+            return std::make_shared<Op>(Tag::NOTEQ);
+        }
+        if(not_end()    &&  *peek == '>')
+        {
+            if(end - peek > 1   &&  *(peek + 1) == '=')                     //  >=
+            {
+                peek += 2;
+                return std::make_shared<Op>(Tag::GREEQ);
+            }
+            ++peek;
+            return std::make_shared<Op>(Tag::GRE);                          //  >
         }
 
         //! for num
