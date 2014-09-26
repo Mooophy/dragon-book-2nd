@@ -121,14 +121,8 @@ public:
         //! for real
         //! ex2.6.3
         if(end - peek > 1   &&  *peek == '.')
-        {
-            float val = 0;
-            ++peek;
-            for(float factor = 0.1f; not_end() && std::isdigit(*peek); factor/=10)
-                val +=  (*peek++ - 48) * factor;
+            return handle_real(0);
 
-            return std::make_shared<Real>(val);
-        }
 
         //! for num
         if(not_end()    &&  std::isdigit(*peek))
@@ -171,6 +165,17 @@ private:
     {
         TokenSptr t = std::make_shared<Word>(w);
         words.insert({w.lexeme, t});
+    }
+
+    //! implemented for ex2.6.3
+    TokenSptr handle_real(int int_part)
+    {
+        float val = int_part;
+        ++peek;
+        for(float frac = 0.1f; not_end() && std::isdigit(*peek); frac/=10)
+            val +=  (*peek++ - 48) * frac;
+
+        return std::make_shared<Real>(val);
     }
 };
 }}//namespace
