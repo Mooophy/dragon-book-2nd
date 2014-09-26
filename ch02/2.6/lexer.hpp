@@ -13,7 +13,7 @@
 namespace dragon {namespace ch2 {
 
 /**
- * @brief The Lexer class
+ * @brief   The Lexer class
  * @note    generics Lexer
  *          using iterator rather char as java version did
  */
@@ -118,6 +118,17 @@ public:
             return std::make_shared<Op>(Tag::GRE);                          //  >
         }
 
+        //! for real
+        //! ex2.6.3
+        if(end - peek > 1   &&  *peek == '.')
+        {
+            float val = 0;
+            for(float factor = 0.1f; not_end() && std::isdigit(*peek); ++peek, factor/=10)
+                val +=  *peek * factor;
+
+            return std::make_shared<Real>(val);
+        }
+
         //! for num
         if(not_end()    &&  std::isdigit(*peek))
         {
@@ -154,6 +165,7 @@ private:
     const Iter end;
     HashTable words;
 
+    //! to save reserved word like "if" "else" and "class", etc.
     void reserve(const Word& w)
     {
         TokenSptr t = std::make_shared<Word>(w);

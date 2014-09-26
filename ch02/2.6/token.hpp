@@ -24,6 +24,7 @@ namespace Tag
     static const int NOTEQ  =   263;
     static const int GREEQ  =   264;
     static const int GRE    =   265;
+    static const int REAL   =   270;
 
     static const int END    =   999;    //as end of input
 }
@@ -56,6 +57,15 @@ struct Op : public Token
     explicit Op(int tag):
         Token{tag}
     {}
+};
+
+struct Real : public Token
+{
+    explicit Real(float val):
+        Token{Tag::REAL}, value{val}
+    {}
+
+    const float value;
 };
 
 using TokenSptr = std::shared_ptr<Token>;
