@@ -8,7 +8,7 @@ int main()
     using Iter = std::string::iterator;
 
     //! for ex2.6.3
-    std::string input{".34*"};
+    std::string input{"522.34*"};
     Lexer<Iter> lex{input.begin(), input.end()};
 
     while(lex.not_end())

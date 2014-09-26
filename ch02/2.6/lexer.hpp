@@ -118,18 +118,22 @@ public:
             return std::make_shared<Op>(Tag::GRE);                          //  >
         }
 
-        //! for real
+        //! for real number, like .5
         //! ex2.6.3
         if(end - peek > 1   &&  *peek == '.')
             return handle_real(0);
 
 
-        //! for num
+        //! for num or real
         if(not_end()    &&  std::isdigit(*peek))
         {
             int val = 0;
             while(not_end()   &&  std::isdigit(*peek))
                 val = val * 10  +   *peek++    - 48;
+
+            //! when '.' appears
+            if(not_end()    &&  *peek == '.')
+                return handle_real(val);
 
             return std::make_shared<Num>(val);
         }
