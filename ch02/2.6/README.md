@@ -1,4 +1,7 @@
-###MEMO
+2.6 Lexical Analysis
+--------------------------
+
+###Contents
 - lexer.hpp
  - class Lexer
 - token.hpp
@@ -7,6 +10,8 @@
  - for testing
 - java/
  - storing sample codes in java as on the textbook
+
+###MEMO 
 - Design modifications
  - use iterator for `peek` rather than `char`
   
