@@ -65,7 +65,7 @@ public:
 
         //! for comments "\\"
         //! ex2.6.1 a)
-        if(end - peek > 2   &&  *peek == '\\'   &&  *(peek + 1) == '\\')
+        if(end - peek > 1   &&  *peek == '\\'   &&  *(peek + 1) == '\\')
             for( peek += 2; not_end() &&  *peek != '\n'; ++peek );
         if(not_end()    &&  *peek == '\n')
         {
@@ -75,12 +75,51 @@ public:
 
         //! for comments "\**\"
         //! ex2.6.1 b)
-        if(end - peek > 2   &&  *peek == '\\'   &&  *(peek + 1) == '*')
+        if(end - peek > 1   &&  *peek == '\\'   &&  *(peek + 1) == '*')
             for(peek += 2;
                 not_end()  &&  !((end - peek > 2) && *peek == '*' && *(peek + 1) == '\\');
                 ++peek)
                 if(*peek    ==  '\n')
                     ++curr_line;
+
+        //! for operators : < <= == != => >
+        //! ex2.6.2
+        if(not_end()    &&  *peek == '>')                   //  >
+        {
+            ++peek;
+            return std::make_shared<Op>(Tag::GRE);
+        }
+        if(not_end()    &&  *peek == '<')
+        {
+            if(end - peek > 1   &&  *(peek + 1) == '=')     //  <=
+            {
+                peek += 2;
+                return std::make_shared<Op>(Tag::LESSEQ);
+            }
+            else                                            //  <
+            {
+                ++peek;
+                return std::make_shared<Op>(Tag::LESS);
+            }
+        }
+        if(end - peek > 1   &&  *peek == '=')
+        {
+            if(*(peek + 1)  ==  '=')                        //  ==
+            {
+                peek += 2;
+                return std::make_shared<Op>(Tag::EQ);
+            }
+            else if(*(peek + 1)  ==  '>')
+            {
+                peek += 2;
+                return std::make_shared<Op>(Tag::GREEQ);    //  >=
+            }
+        }
+        if(end - peek > 1   &&  *peek == '!'    &&  *(peek + 1) == '=')
+        {
+            peek += 2;
+            return std::make_shared<Op>(Tag::NOTEQ);        //  !=
+        }
 
         //! for num
         if(not_end()    &&  std::isdigit(*peek))

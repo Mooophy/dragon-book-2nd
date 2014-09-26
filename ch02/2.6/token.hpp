@@ -17,6 +17,14 @@ namespace Tag
     static const int ID     =   257;
     static const int TRUE   =   258;
     static const int FALSE  =   259;
+
+    static const int LESS   =   260;
+    static const int LESSEQ =   261;
+    static const int EQ     =   262;
+    static const int NOTEQ  =   263;
+    static const int GREEQ  =   264;
+    static const int GRE    =   265;
+
     static const int END    =   999;    //as end of input
 }
 
@@ -27,7 +35,7 @@ struct Token
 
 struct Num : public Token
 {
-    Num(int val):
+    explicit Num(int val):
         Token{Tag::NUM}, value{val}
     {}
 
@@ -36,11 +44,18 @@ struct Num : public Token
 
 struct Word : public Token
 {
-    Word(int t, const std::string& lx):
-        Token{t},lexeme{lx}
+    Word(int tag, const std::string& lx):
+        Token{tag},lexeme{lx}
     {}
 
     const std::string lexeme;
+};
+
+struct Op : public Token
+{
+    explicit Op(int tag):
+        Token{tag}
+    {}
 };
 
 using TokenSptr = std::shared_ptr<Token>;
