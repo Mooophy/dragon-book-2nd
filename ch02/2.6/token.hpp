@@ -1,3 +1,9 @@
+//! @file   token.hpp
+//!
+//! @author Yue Wang
+//! @date   26 Sep 2014
+//!
+
 #ifndef TOKEN_HPP
 #define TOKEN_HPP
 

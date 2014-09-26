@@ -1,3 +1,8 @@
+//! @file   lexer.hpp
+//!
+//! @author Yue Wang
+//! @date   26 Sep 2014
+//!
 #ifndef LEXER_HPP
 #define LEXER_HPP
 
@@ -37,6 +42,11 @@ public:
         return peek < end;
     }
 
+    int lines()const
+    {
+        return curr_line;
+    }
+
     /**
      * @brief scan
      * @return  token's shared pointer
@@ -44,7 +54,7 @@ public:
     TokenSptr scan()
     {
         //! for white spaces
-        for(; not_end(); ++peek)
+        for( ; not_end(); ++peek)
         {
             if( *peek == ' ' || *peek == '\t')
                 continue;
@@ -53,8 +63,17 @@ public:
             else break;
         }
 
+        //! for comments "\\"
+        if(end - peek > 2   &&  *peek == 92   &&  *(peek + 1) == 92)
+            for( peek += 2 ; not_end() &&  *peek != '\n'; ++peek );
+        if(not_end()    &&  *peek == '\n')
+        {
+            ++curr_line;
+            ++peek;
+        }
+
         //! for num
-        if(not_end() && std::isdigit(*peek))
+        if(not_end()    &&  std::isdigit(*peek))
         {
             int val = 0;
             while(not_end()   &&  std::isdigit(*peek))
@@ -78,6 +97,7 @@ public:
             return ret;
         }
 
+        //! for the rest cases
         return std::make_shared<Token>
                 (not_end()?   Token{*peek++}    :   Token{Tag::END});
     }
