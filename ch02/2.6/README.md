@@ -7,6 +7,6 @@
  - for testing
 - java/
  - storing sample codes in java as on the textbook
-### Design modifications
+- Design modifications
  - use iterator for `peek` rather than `char`
   
