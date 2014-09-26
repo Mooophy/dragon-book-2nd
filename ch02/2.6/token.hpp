@@ -31,7 +31,12 @@ namespace Tag
 
 struct Token
 {
-   const int tag;
+    Token(int t):
+        tag{t}
+    {}
+
+    const int tag;
+    virtual ~Token(){}
 };
 
 struct Num : public Token
@@ -64,6 +69,8 @@ struct Real : public Token
     explicit Real(float val):
         Token{Tag::REAL}, value{val}
     {}
+
+    virtual ~Real(){}
 
     const float value;
 };

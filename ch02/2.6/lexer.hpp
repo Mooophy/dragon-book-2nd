@@ -123,8 +123,9 @@ public:
         if(end - peek > 1   &&  *peek == '.')
         {
             float val = 0;
-            for(float factor = 0.1f; not_end() && std::isdigit(*peek); ++peek, factor/=10)
-                val +=  *peek * factor;
+            ++peek;
+            for(float factor = 0.1f; not_end() && std::isdigit(*peek); factor/=10)
+                val +=  (*peek++ - 48) * factor;
 
             return std::make_shared<Real>(val);
         }
