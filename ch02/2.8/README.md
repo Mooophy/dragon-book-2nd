@@ -50,7 +50,7 @@ protected:
     Expr expr3;
     Stmt stmt;
     Label loop;
-    Lable after
+    Label after;
 }
 ```
  - output should be somethng like :
