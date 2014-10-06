@@ -33,7 +33,7 @@ public:
         after(new_label())
     {}
     
-    virtual gen() const override
+    virtual void gen() const override
     {
         expr1.gen();
         emit(loop + ":");
