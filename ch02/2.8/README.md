@@ -17,3 +17,39 @@ expr1 ; while ( expr2 ) {stmt expr3 ; }
 
 Define a class For for for-statements, similar to class If in Fig. 2.43.
 ```
+- Solution in c++ style pseudocode:
+```cpp
+class For : public Stmt
+{
+public:
+    using Stmt::emit;
+
+    For(const Expr& e1, const Expr& e2, const Expr& e3, const Stmt& s):
+        expr1{e1}, 
+        expr2{e2}, 
+        expr3{e3}, 
+        stmt{s},
+        loop{new_label()},
+        after(new_label())
+    {}
+    
+    virtual gen() const override
+    {
+        emit(expr1.lvalue().to_string());
+        emit(loop + ":");
+        emit("ifFalse " + expr2.rvalue().to_string() + " goto " + after);
+        stmt.gen();
+        emit(expr3.rvalue().to_string());
+        emit("goto " + loop);
+        emit(after + ":");
+    }
+    
+protected:
+    Expr expr1;
+    Expr expr2;
+    Expr expr3;
+    Stmt stmt;
+    Label loop;
+    Lable after
+}
+```
