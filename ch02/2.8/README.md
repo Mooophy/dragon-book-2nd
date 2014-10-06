@@ -1,6 +1,6 @@
 2.8 Intermediate Code Generation
 --------------------------------
-- ex2.8.1
+- Exercise 2.8.1
 ```
 For-statements in C and Java have the form:
 
