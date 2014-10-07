@@ -8,7 +8,7 @@ _(ii)the lexical form of numerical constants_
 _(iii)the lexical form of identifiers, for languages:_
 _(a)C  (b)C++  (c)C#  (d)Fortran  (e)Java (f)Lisp (g)SQL_
 - C++(according to ISO C++ Standard draft n3787)
- - `[A-Za-z0-9] | [_{}[]#()<>%:;.?*+=/^&|~!=,\"'] | {space, tab, vertical tab, feed, new-line}`
+ - Based on section 2.3, C++ Standard : `[A-Za-z0-9] | [_{}[]#()<>%:;.?*+=/^&|~!=,\"'] | {space, tab, vertical tab, feed, new-line}`
  - For instance : `integer-literal: decimal-literal integer-suffixopt` check C++ Standard section 2.14 for the rest, which are too tedious to paste here.
  - Copied from section 2.11, C++ standard:
 ```
