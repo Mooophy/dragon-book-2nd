@@ -1,6 +1,6 @@
 2.8 Intermediate Code Generation
 --------------------------------
-- __Exercise 2.8.1__
+#####Exercise 2.8.1
 ```
 For-statements in C and Java have the form:
 
@@ -62,4 +62,9 @@ expr3
 goto loop
 after : 
 ```
-
+#####Exercise 2.8.1
+```
+The programming language C does not have a boolean type. Show how a C compiler might 
+translate an if-statement into three-address code.
+```
+- Solution: use something like `ifEqual 0` instead.
