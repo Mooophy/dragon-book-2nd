@@ -31,7 +31,7 @@ see <a href="morePix.html">More Picture</a> if you liked that one.</p>
 _into appropriate lexemes. Which lexemes should get associated lexical values, and what should_
 _those values be?_
 - Solution :
-```
+```cpp
 <literal, "Here is a photo of "><b_start><literal, "my house"><b_end><literal, ":">
 <p_start><img_start><img, pointer to symbol table entry><img->src,""house.gif""><img_end><br>
 <literal, "See "><a_start><href, "morePix.html"><literal, "More Picture"><a_end>
