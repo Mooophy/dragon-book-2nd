@@ -43,5 +43,4 @@ digit: one of
 - Java (according to `The Java® Language Specification SE 7 Edition, Feb 2013`)
  - `UnicodeInputCharacter but not CR or LF ` check section 3 for detail.
  - check 3.10 for detail.
- - `Identifier: IdentifierChars but not a Keyword or BooleanLiteral or NullLiteral` check 3.8 for the rest
- - 
+ - something like :  `Identifier: IdentifierChars but not a Keyword or BooleanLiteral or NullLiteral` check 3.8 for the rest
