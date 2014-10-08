@@ -48,7 +48,7 @@ digit: one of
  - From section 2.1 : `The precise rules for form-ing identiers vary among implementations of Scheme, but in all implementations a sequence of letters, digits, and \ex-tended alphabetic characters" that begins with a character that cannot begin a number is an identier`
  - check 7.1.1.
  - check 7.1.1.
-- Sql (according to `Second Informal Review Draft ISO/IEC 9075:1992, July 1992`)
+- Sql (according to `Second Informal Review Draft ISO/IEC 9075:1992 Database Language SQL, July 1992`)
  - something like `<SQL terminal character> ::=  <SQL language character> | <SQL embedded language character>`,check section 5.1 for the rest.
  - check 5.3 for detail.
  - `<identifier> ::= [ <introducer><character set specification> ] <actual identifier>`, check section 5.4 for the rest parts. 
