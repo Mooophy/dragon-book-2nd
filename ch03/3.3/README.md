@@ -44,3 +44,7 @@ digit: one of
  - `UnicodeInputCharacter but not CR or LF ` check section 3 for detail.
  - check 3.10 for detail.
  - something like :  `Identifier: IdentifierChars but not a Keyword or BooleanLiteral or NullLiteral` check 3.8 for the rest
+- Lisp (using Scheme dialect as the example)(according to `Revised5 Report on the Algorithmic Language Scheme, Feb 1998`)
+ - From section 2.1 : `The precise rules for form-ing identiers vary among implementations of Scheme, but in all implementations a sequence of letters, digits, and \ex-tended alphabetic characters" that begins with a character that cannot begin a number is an identier`
+ - check 7.1.1.
+ - check 7.1.1.
