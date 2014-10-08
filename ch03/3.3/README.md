@@ -7,9 +7,11 @@ _in  character strings or comments)_
 _(ii)the lexical form of numerical constants_
 _(iii)the lexical form of identifiers, for languages:_
 _(a)C  (b)C++  (c)C#  (d)Fortran  (e)Java (f)Lisp (g)SQL_
-- C
+- C(according to ISO C Standard draft n1256, Sep 2007)
  - ```[A-Za-z0-9] |  [_{}[]#()<>%:;.?*+-/^&|~!=,\"'] | {space, tab, vertical tab, feed, new-line}```, based on [wiki](http://en.wikipedia.org/wiki/C_(programming_language)#Character_set)
-- C++(according to ISO C++ Standard draft n3787)
+ - same as C++
+ - same as C++
+- C++(according to ISO C++ Standard draft n3787, Oct 2013)
  - ```[A-Za-z0-9] |  [_{}[]#()<>%:;.?*+-/^&|~!=,\"'] | {space, tab, vertical tab, feed, new-line}```, Based on section 2.3, C++ Standard.
  - For instance : `integer-literal: decimal-literal integer-suffixopt` check C++ Standard section 2.14 for the rest, which are too tedious to paste here.
  - Copied from section 2.11, C++ standard:
@@ -30,3 +32,7 @@ nondigit: one of
 digit: one of
         0 1 2 3 4 5 6 7 8 9
 ```
+- C#(according to C# Language Specification Version 5.0, 2012)
+ - `A Unicode character escape sequence` check section 2.4.1 for more.
+ - check section 2.4.4 for numerical constands.
+ - check section 2.4.2 for identifiers.
