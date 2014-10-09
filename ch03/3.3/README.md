@@ -54,3 +54,14 @@ digit: one of
  - `<identifier> ::= [ <introducer><character set specification> ] <actual identifier>`, check section 5.4 for the rest parts. 
 
 #####Exercise 3.3.2
+Describe the languages denoted by the following regular expressions:
+```ecma
+a) a(a|b)*a
+b) ((ε|a)b*)*
+c) (a|b)*a(a|b)(a|b)
+d) a*ba*ba*ba*
+e) !! (aa|bb)*((ab|ba)(aa|bb)*(ab|ba)(aa|bb)*)*
+```
+- Solution:
+ - a) something like : `aa``aaa``aba``aaaabbbba``aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
+ - b) something like : `b``ab``abbabb`
