@@ -52,3 +52,5 @@ digit: one of
  - something like `<SQL terminal character> ::=  <SQL language character> | <SQL embedded language character>`,check section 5.1 for the rest.
  - check 5.3 for detail.
  - `<identifier> ::= [ <introducer><character set specification> ] <actual identifier>`, check section 5.4 for the rest parts. 
+
+#####Exercise 3.3.2
