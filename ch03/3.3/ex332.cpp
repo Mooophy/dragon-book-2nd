@@ -3,7 +3,7 @@
 //! @note   this code is implmente to test the exercise 3.3.2 from Dragon Book II
 //! @attention  c++ 11 features are used, so -std=c++11 flag is needed to compile :
 //!                 clang++ -std=c++11 -Wall -ex332.cpp -o ex332
-//!             tested on clang++ 3.4
+//!             tested on clang++ 3.5
 //!
 
 #include <string>
