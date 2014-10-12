@@ -23,9 +23,9 @@ public:
     Ex332():
         patterns
     {
-        "a[a|b]*a",
+        "a(a|b)*a",
         "(a?b*)*",
-        "[ab]*a[ab][ab]",
+        "(a|b)*a(a|b)(a|b)",
         "a*ba*ba*ba*",
         "(aa|bb)*((ab|ba)(aa|bb)*(ab|ba)(aa|bb)*)*"
     },
