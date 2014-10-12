@@ -68,3 +68,4 @@ d) a*ba*ba*ba*
  - c) something like :  `aaaaaaaa`,`aaaaaaaaabb`,`aaaaaaaaaaaaaab`
  - d) something like :  `bbb`, `baaaaabaaaaaaba`,`abbb`, `abababa`
  - e) something like :  `aa`,`bb`,`abab`,`abba`
+ - note) code : ex332.cpp in this folder can be used for testing this exercise.
