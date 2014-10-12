@@ -60,8 +60,11 @@ a) a(a|b)*a
 b) ((ε|a)b*)*
 c) (a|b)*a(a|b)(a|b)
 d) a*ba*ba*ba*
-e) !! (aa|bb)*((ab|ba)(aa|bb)*(ab|ba)(aa|bb)*)*
+!!e) (aa|bb)*((ab|ba)(aa|bb)*(ab|ba)(aa|bb)*)*
 ```
 - Solution:
- - a) something like : `aa``aaa``aba``aaaabbbba``aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
- - b) something like : `b``ab``abbabb`
+ - a) something like : `aa`,`aaa`,`aba`,`aaaabbbba`,`aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`
+ - b) something like : `b`,`ab`,`abbabb`
+ - c) something like :  `aaaaaaaa`,`aaaaaaaaabb`,`aaaaaaaaaaaaaab`
+ - d) something like :  `bbb`, `baaaaabaaaaaaba`,`abbb`, `abababa`
+ - e) something like :  `aa`,`bb`,`abab`,`abba`
