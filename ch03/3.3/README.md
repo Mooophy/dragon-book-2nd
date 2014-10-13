@@ -77,3 +77,10 @@ In a string of length n , how many of the following are there?
 - Proper prefixes.
 - ! Substrings.
 - ! Subsequences.
+
+solutions
+- n + 1
+- n + 1
+- n - 1
+- n(n+1)/2
+- Σ(i= 0 to n) C(n, i)
