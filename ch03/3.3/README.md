@@ -104,3 +104,4 @@ Solution : `[sS][eE][lL][eE][cC][tT]`
 
 Solution : 
 - `(rest|a)*a(rest|a)*(rest|e)*e(rest|e)*(rest|i)*i(rest|i)*(rest|o)*o(rest|o)*(rest|u)*u(rest|u)*`, `rest->[b-d]|[f-h]|[j-n]|[p-t][v-z]`
+- `a*b*c*d*...x*y*z*`
