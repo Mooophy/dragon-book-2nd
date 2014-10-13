@@ -72,8 +72,8 @@ d) a*ba*ba*ba*
 
 #####Exercise 3.3.3
 In a string of length n , how many of the following are there?
-Prefixes.
-Suffixes.
-Proper prefixes.
-! Substrings.
-! Subsequences.
+- Prefixes.
+- Suffixes.
+- Proper prefixes.
+- ! Substrings.
+- ! Subsequences.
