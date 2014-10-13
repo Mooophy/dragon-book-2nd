@@ -103,5 +103,4 @@ Solution : `[sS][eE][lL][eE][cC][tT]`
 - All strings of a's and b's that do not contain the subsequence abb.
 
 Solution : 
-- 
-`rest->[b-d]|[f-h]|[j-n]|[p-t][v-z]`, `(rest|a)*a(rest|a)*(rest|e)*e(rest|e)*(rest|i)*i(rest|i)*(rest|o)*o(rest|o)*(rest|u)*u(rest|u)*`
+- `rest->[b-d]|[f-h]|[j-n]|[p-t][v-z]`, `(rest|a)*a(rest|a)*(rest|e)*e(rest|e)*(rest|i)*i(rest|i)*(rest|o)*o(rest|o)*(rest|u)*u(rest|u)*`
