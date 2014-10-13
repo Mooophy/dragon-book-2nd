@@ -77,10 +77,14 @@ In a string of length n , how many of the following are there?
 - Proper prefixes.
 - ! Substrings.
 - ! Subsequences.
-
-solutions
+Solution
 - n + 1
 - n + 1
 - n - 1
 - n(n+1)/2
 - Σ(i= 0 to n) C(n, i)
+
+#####Exercise 3.3.3
+Most languages are case sensitive, so keywords can be written only one way, and the regular expressions describing their lexeme is very simple. However, some languages, like SQL, are case insensitive, so a keyword can be written either in lowercase or in uppercase, or in any mixture of cases. Thus, the SQL keyword SELECT can also be written select, Select, or sElEcT, for instance. Show how to write a regular expression for a keyword in a case­ insensitive language. Illustrate the idea by writing the expression for "select" in SQL.
+
+Solution : `[sS][eE][lL][eE][cC][tT]`
