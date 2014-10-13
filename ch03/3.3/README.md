@@ -84,7 +84,22 @@ Solution
 - n(n+1)/2
 - Σ(i= 0 to n) C(n, i)
 
-#####Exercise 3.3.3
+#####Exercise 3.3.4
 Most languages are case sensitive, so keywords can be written only one way, and the regular expressions describing their lexeme is very simple. However, some languages, like SQL, are case insensitive, so a keyword can be written either in lowercase or in uppercase, or in any mixture of cases. Thus, the SQL keyword SELECT can also be written select, Select, or sElEcT, for instance. Show how to write a regular expression for a keyword in a case­ insensitive language. Illustrate the idea by writing the expression for "select" in SQL.
 
 Solution : `[sS][eE][lL][eE][cC][tT]`
+
+#####Exercise 3.3.5
+！Write regular definitions for the following languages:
+
+- All strings of lowercase letters that contain the five vowels in order.
+- All strings of lowercase letters in which the letters are in ascending lexicographic order.
+- Comments, consisting of a string surrounded by /* and */, without an intervening */, unless it is inside double-quotes (")
+- All strings of digits with no repeated digits. Hint: Try this problem first with a few digits, such as {O, 1, 2}.!!
+- All strings of digits with at most one repeated digit.!!
+- All strings of a's and b's with an even number of a's and an odd number of b's.!!
+- The set of Chess moves,in the informal notation,such as p-k4 or kbp*qn.
+- All strings of a's and b's that do not contain the substring abb.!!
+- All strings of a's and b's that do not contain the subsequence abb.
+Solution : 
+- `rest->[b-d]|[f-h]|[j-n]|[p-t][v-z]`, `(rest|a)*a(rest|a)*(rest|e)*e(rest|e)*(rest|i)*i(rest|i)*(rest|o)*o(rest|o)*(rest|u)*u(rest|u)*`
